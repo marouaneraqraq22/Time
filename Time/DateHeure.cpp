@@ -70,6 +70,10 @@ bool DateHeure::operator>(const DateHeure& d)
 		if (d.mois < this->mois)return true;
 		if (d.mois == this->mois) {
 			if (d.jour < this->jour) return true;
+			if (d.jour == this->jour) {
+				Heure H1(this->heure, this->minute, this->seconde), H2(d.heure, d.minute, d.seconde);
+				return (H1 > H2);
+				}
 
 		}
 	}
